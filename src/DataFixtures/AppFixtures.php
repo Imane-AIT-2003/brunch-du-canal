@@ -39,7 +39,7 @@ class AppFixtures extends Fixture
 
 
 
-    for ($i = 0; $i < 20; $i++) {
+    for ($i = 0; $i < 600; $i++) {
         $reservation = new Reservation();
         $reservation-> setDateHeure($faker->dateTimeBetween('now', '+2 months'));
         $reservation-> setClient($faker->randomElement($clients));
