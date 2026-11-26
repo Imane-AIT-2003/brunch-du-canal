@@ -35,6 +35,9 @@ class Reservation
     #[ORM\ManyToOne(inversedBy: 'reservation')]
     private ?User $user = null;
 
+    #[ORM\Column]
+    private ?bool $is_terminee = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +123,18 @@ class Reservation
     public function setUser(?User $user): static
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function isTerminee(): ?bool
+    {
+        return $this->is_terminee;
+    }
+
+    public function setIsTerminee(bool $is_terminee): static
+    {
+        $this->is_terminee = $is_terminee;
 
         return $this;
     }
